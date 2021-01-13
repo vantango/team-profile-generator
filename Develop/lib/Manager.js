@@ -5,18 +5,6 @@ class Manager {
         this.id = id;
         this.email = email;
     }
-    getName() {
-
-    }
-    getId() {
-
-    }
-    getEmail() {
-
-    }
-    getRole() {
-
-    }
     officeNumber() {
 
     }

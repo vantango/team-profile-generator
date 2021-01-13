@@ -5,18 +5,6 @@ class Intern {
         this.id = id;
         this.email = email;
     }
-    getName() {
-
-    }
-    getId() {
-
-    }
-    getEmail() {
-
-    }
-    getRole() {
-
-    }
     getSchool() {
 
     }

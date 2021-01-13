@@ -5,18 +5,6 @@ class Engineer {
         this.id = id;
         this.email = email;
     }
-    getName() {
-
-    }
-    getId() {
-
-    }
-    getEmail() {
-
-    }
-    getRole() {
-
-    }
     getGithub() {
 
     }
