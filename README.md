@@ -4,6 +4,10 @@
     
 ## Description: 
 I was tasked with developing an application that utilizes the command line to ask the user for a specific job title, followed by questions, some of which are role-specific. It then prints the chosen team member positions to a functional HTML file.
+
+<img src="https://media.giphy.com/media/xz7e07XAy0OBUhR4p4/giphy.gif">
+
+<img src=">
             
 ## Table of Contents
 - [Installation](#Installation)
