@@ -10,21 +10,45 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 const allMembers = []
+
+// Manager questions
 const managerQuestions = [
     {
         type: 'input',
         name: 'name',
         message: `What is your name?`,
+        validate: input => {
+            if (input !== "") {
+                return true;
+            } else {
+                return "Please enter a minimum of one character"
+            }
+        }
     },
     {
         type: 'input',
         name: 'id',
         message: `What is your ID?`,
+        validate: input => {
+            if (input > 0) {
+                return true;
+            } else {
+                return "Please enter a positive number greater than 0"
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
         message: `What is your email?`,
+        validate: emailAddress => {
+            let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (emailAddress.match(regexEmail)) {
+                return true;
+            } else {
+                return "Please enter a valid email address";
+            };
+        }
     },
     {
         type: 'input',
@@ -33,21 +57,44 @@ const managerQuestions = [
     }
 ]
 
+// Engineer questions
 const engineerQuestions = [
     {
         type: 'input',
         name: 'name',
         message: `What is your name?`,
+        validate: input => {
+            if (input !== "") {
+                return true;
+            } else {
+                return "Please enter a minimum of one character"
+            }
+        }
     },
     {
         type: 'input',
         name: 'id',
         message: `What is your ID?`,
+        validate: input => {
+            if (input > 0) {
+                return true;
+            } else {
+                return "Please enter a positive number greater than 0"
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
         message: `What is your email?`,
+        validate: emailAddress => {
+            let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (emailAddress.match(regexEmail)) {
+                return true;
+            } else {
+                return "Please enter a valid email address";
+            };
+        }
     },
     {
         type: 'input',
@@ -56,21 +103,44 @@ const engineerQuestions = [
     }
 ]
 
+// Inter questions
 const internQuestions = [
     {
         type: 'input',
         name: 'name',
         message: `What is your name?`,
+        validate: input => {
+            if (input !== "") {
+                return true;
+            } else {
+                return "Please enter a minimum of one character"
+            }
+        }
     },
     {
         type: 'input',
         name: 'id',
         message: `What is your ID?`,
+        validate: input => {
+            if (input > 0) {
+                return true;
+            } else {
+                return "Please enter a positive number greater than 0"
+            }
+        }
     },
     {
         type: 'input',
         name: 'email',
         message: `What is your email?`,
+        validate: emailAddress => {
+            let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (emailAddress.match(regexEmail)) {
+                return true;
+            } else {
+                return "Please enter a valid email address";
+            };
+        }
     },
     {
         type: 'input',
@@ -142,6 +212,7 @@ const internPrompt = () => {
         })
 }
 
+// After the user has input all employees desired, call the `render` function 
 const createHtml = () => {
     console.log("All Members are", allMembers);
     console.log(outputPath);
@@ -150,26 +221,5 @@ const createHtml = () => {
         console.log('The team profile has been generated!');
     });
 }
-
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
 
 promptUser();
